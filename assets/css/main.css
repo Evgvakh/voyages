@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .body{
+        min-height: 100vh;
+    }
+    .nav{
+        height: 7rem;
+        width: 100%;
+    }
+    .body-container{
+        display: flex;
+        flex-direction: column;
+        min-height: 62.5vh;
+        width: 100%;
+    }
+    .container-content{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        padding-top: 15px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+    .card-art{
+        height: 200px;
+        width: 100%;
+        border-radius: 10%;
+    }
+    .test{
+        font-family: 'Rubik', sans-serif;
+    }
+    
+    .article-color{
+        background-color: #CC8B65;
+    }
+    .article-bg{
+        background-color: #013328;
+    }
+}
+
+svg#freepik_stories-journey:not(.animated) .animable {
+    opacity: 0;
+}
+
+svg#freepik_stories-journey.animated #freepik--Character--inject-19 {
+    animation: 3s Infinite linear shake;
+    animation-delay: 0.5s;
+}
+
+@keyframes shake {
+
+    10%,
+    90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%,
+    80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%,
+    50%,
+    70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%,
+    60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}

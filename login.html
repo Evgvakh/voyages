@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- FLOWBITE -->
+    <script src="./node_modules/flowbite/dist/flowbite.min.js"></script>
+    <!-- FONTAWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="./assets/css/tailwind.css">
+    <title>Document</title>
+</head>
+
+<body class="bg-emerald-900 min-h-screen">
+    <header>
+        <nav class="flex h-28 w-full px-8 py-2 items-center md:px-12">
+            <div class="flex items-center justify-between w-full h-full">
+                <div class="h-20 w-20">
+                    <a href="./index.html"><img class="rounded-full w-full h-full" src="./assets/img/logo.jpg" alt=""></a>
+                </div>
+                <button><i class="fa-solid fa-bars text-2xl text-slate-200"></i></button>
+            </div>
+        </nav>
+    </header>
+    <div class="body-container mb-8"> 
+        <div class="container-content">
+            <div class="w-full max-w-sm p-4 bg-white border border-gray-200 rounded-lg shadow sm:p-6 md:p-8 dark:bg-gray-800 dark:border-gray-700">
+                <form class="space-y-6" action="#">
+                    <h5 class="text-xl font-medium text-gray-900 dark:text-white">Sign in to our platform</h5>
+                    <div>
+                        <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your email</label>
+                        <input type="email" name="email" id="email" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" placeholder="name@company.com" required>
+                    </div>
+                    <div>
+                        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your password</label>
+                        <input type="password" name="password" id="password" placeholder="••••••••" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-600 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white" required>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex items-start">
+                            <div class="flex items-center h-5">
+                                <input id="remember" type="checkbox" value="" class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800" required>
+                            </div>
+                            <label for="remember" class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">Remember me</label>
+                        </div>
+                        <a href="#" class="ml-auto text-sm text-blue-700 hover:underline dark:text-blue-500">Lost Password?</a>
+                    </div>
+                    <button type="submit" class="w-full text-white bg-emerald-900 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Login to your account</button>
+                    <div class="text-sm font-medium text-gray-500 dark:text-gray-300">
+                        Not registered? <a href="#" class="text-blue-700 hover:underline dark:text-blue-500">Create account</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer class="p-4 bg-slate-100  shadow md:px-6 md:py-8 dark:bg-gray-900">
+        <div class="sm:flex sm:items-center sm:justify-between">
+            <a href="#" class="flex items-center mb-4 sm:mb-0">
+                <img src="./assets/img/logo.jpg" class="h-12 mr-3 rounded-full" alt="Flowbite Logo" />
+                <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"></span>
+            </a>
+            <ul
+                class="flex flex-wrap items-center justify-center mb-6 text-sm text-gray-500 sm:mb-0 dark:text-gray-400">
+                <li>
+                    <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
+                </li>
+                <li>
+                    <a href="#" class="mr-4 hover:underline md:mr-6">Privacy Policy</a>
+                </li>
+                <li>
+                    <a href="https://storyset.com/nature" target="_blank" class="mr-4 hover:underline md:mr-6">Storyset</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline">Contact</a>
+                </li>
+            </ul>
+        </div>
+        <hr class="my-6 border-emerald-900 sm:mx-auto dark:border-gray-700 lg:my-8" />
+        <span class="text-center block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 3 <a
+                href="https://flowbite.com/" class="hover:underline">Flowbite™</a>. All Rights Reserved.
+        </span>
+    </footer>
+</body>
+</html>
