@@ -4,39 +4,29 @@
 @tailwind utilities;
 
 @layer components {
-    .body{
-        min-height: 100vh;
-    }
-    .nav{
-        height: 7rem;
-        width: 100%;
+    body{
+        @apply min-h-screen bg-emerald-900;
     }
     .body-container{
-        display: flex;
-        flex-direction: column;
-        min-height: 62.5vh;
-        width: 100%;
+        @apply flex flex-col w-full min-h-[62.5vh] mb-8;
     }
     .container-content{
-        height: 100%;
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        padding-top: 15px;
-        padding-left: 24px;
-        padding-right: 24px;
+        @apply h-full w-full flex flex-col items-center gap-2.5 px-6 pt-4;
     }
-    .card-art{
-        height: 200px;
-        width: 100%;
-        border-radius: 10%;
+    nav{
+        @apply flex h-28 w-full px-8 py-2 items-center md:px-12; 
     }
-    .test{
-        font-family: 'Rubik', sans-serif;
+    .mobile-nav{
+        @apply flex items-center justify-between w-full h-full;
     }
-    
+    .box-logo{
+        @apply h-20 w-20;
+    }
+    .logo{
+        @apply rounded-full w-full h-full;
+    }
+
+
     .article-color{
         background-color: #CC8B65;
     }
