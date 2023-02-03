@@ -1,6 +1,7 @@
-<?php 
+<?php
 
-class Controller {
+class Controller
+{
     public $route;
     public $action;
     public $view;
@@ -10,15 +11,10 @@ class Controller {
     {
         $this->route = $route;
         $this->action = $action;
-        if (file_exists('application/models/'.$model.'.php')) 
-        {
+        if (file_exists('application/models/' . $model . '.php')) {
             $this->model = new $model;
         }
-        if (isset($id)) 
-        {
-            $this->id_article = (int) $id;
-
-        }        
+        $this->id_article = (int) $id;
         $this->view = new View($route, $action);
     }
 }

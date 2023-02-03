@@ -1,6 +1,6 @@
 <?php 
 extract($data[0]);
-
+$art_content = $contenu;
 require_once 'application/common/comment.php';
 
 $comments = [];
@@ -15,13 +15,13 @@ foreach ($comment_data as $key => $value) {
 
 <h3>ARTICLE SUR LE SUJET DE <?=$titre?></h3>
 <h4>Le contenu: </h4>
-<p><?=$contenu?></p>
+<p><?=$art_content?></p>
 
 <h4>Les commentaires:</h4>
 <?php foreach ($comments as $key => $val):?>
     <div>
         <p><u>User <?=$val->id_user?> a ecrit: </u></p>
-        <p><?=$val->contenu ?></p>
+        <p><?=$val->comment_contenu ?></p>
     </div>
 <?php endforeach;?>
 
