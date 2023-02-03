@@ -14,8 +14,7 @@ class ArticlesModel
         $req = $pdo->prepare($sql);
         $req->execute();
 
-        $res = $req->fetchAll(PDO::FETCH_ASSOC);
-        var_dump($res);
+        $res = $req->fetchAll(PDO::FETCH_ASSOC);        
         return $res;
     }
 }

@@ -9,7 +9,10 @@ class Controller {
     {
         $this->route = $route;
         $this->action = $action;
-        if (file_exists('application/models/'.$model.'.php')) {$this->model = new $model;}        
+        if (file_exists('application/models/'.$model.'.php')) 
+        {
+            $this->model = new $model;
+        }        
         $this->view = new View($route, $action);
     }
 }

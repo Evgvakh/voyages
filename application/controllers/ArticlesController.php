@@ -7,8 +7,7 @@ class ArticlesController extends Controller
     public function showAction()
     {
         $data = $this->model->getData();          
-        $content = 'application/views/' . $this->route . '/' . $this->action . '.php';
-        echo '</br> CONTENT ON ArticlesContent: ' . $content;
+        $content = 'application/views/' . $this->route . '/' . $this->action . '.php';        
         $this->view->generate('ARTICLES', $content, $data);
     }
 }
