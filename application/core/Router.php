@@ -19,6 +19,11 @@ class Router
         if (!empty($routes[3])) {
             $action = $routes[3];
         }
+
+        if (!empty($routes[4])) {
+            $id = $routes[4];
+        }
+
         // Concat pour definir les noms des fichiers controlleurs
         $model_name = $controller.'Model';
         $controller_name =  $controller.'Controller';
@@ -36,6 +41,8 @@ class Router
         $controller_file = $controller_name. '.php';
         $controller_path = "application/controllers/" . $controller_file;
         echo '</br>' . $controller_path . ' ' . $controller_file . ' ' . $controller_name;
+        echo '</br> ACTION NAME: '.$action_name;
+        echo '</br> ID: ' .$id;
         if (file_exists($controller_path)) {
             include "application/controllers/" . $controller_file;            
         } else {           
@@ -43,11 +50,11 @@ class Router
         }
 
         // Creation du controlleur
-        $controller = new $controller_name($controller, $action, $model_name);        
+        $controller = new $controller_name($controller, $action, $model_name, $id);        
 
         if (method_exists($controller, $action_name)) {           
             $controller->$action_name();
-        } else {            
+        } else {
             // Router::ErrorPage404();
         }
 

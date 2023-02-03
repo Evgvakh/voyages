@@ -11,7 +11,7 @@ class View
         $this->controller = $route;
         $this->action = $action_name;
     }
-    public function generate($title, $page_content, $data = null)
+    public function generate($page_title, $page_content, $data = null)
     { //$page_content sera affichee sur la page views/default/default.php              
         // dans $data y aura le contenu (resulats des requetes)
 
