@@ -26,11 +26,11 @@ class Router
 
         // Rajout de Modele (si besoin)
 
-        $model_file = strtolower($model_name) . '.php';
+        $model_file = $model_name . '.php';
         $model_path = "application/models/" . $model_file;
         if (file_exists($model_path)) {
             include "application/models/" . $model_file;
-        }
+        } 
 
         // Saisie de ficher de controlleur
         $controller_file = $controller_name. '.php';

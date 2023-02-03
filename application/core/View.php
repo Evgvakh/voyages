@@ -15,7 +15,7 @@ class View
     { //$page_content sera affichee sur la page views/default/default.php              
         // dans $data y aura le contenu (resulats des requetes)
 
-        extract($data);
+        // extract($data);
         require 'application/views/default/default.php';
     }
 
