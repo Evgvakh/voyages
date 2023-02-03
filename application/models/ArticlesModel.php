@@ -34,4 +34,18 @@ class ArticlesModel
         return $res;
     }
 
+    public function getComments($id) {
+        try {
+            $pdo = new PDO("mysql:host=localhost; dbname=blog_voyage", 'root', '');
+        } catch (PDOException $e) {
+            die("Erreur : " . $e->getMessage());
+        }        
+        $sql = "SELECT * FROM commentaires WHERE id_article = :id";
+        $req = $pdo->prepare($sql);
+        $req->execute(array('id' => $id));
+
+        $res = $req->fetchAll();        
+        return $res;
+    }
+
 }
