@@ -22,6 +22,8 @@ class Router
 
         if (!empty($routes[4])) {
             $id = $routes[4];
+        } else {
+            $id = 0;
         }
 
         // Concat pour definir les noms des fichiers controlleurs
