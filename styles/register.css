@@ -1,0 +1,64 @@
+.register-container {
+    width: 60%;
+    margin: 7em auto;    
+}
+
+.register__form-container {
+    background-color: rgba(118, 90, 68, 0.87);
+    padding: 4em;
+    color:  rgb(246, 247, 239);
+    box-shadow: 0px 0px 2px 2px rgb(118, 90, 68);
+    border-radius: 10px;
+}
+
+.register__form-container h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 0.4em;
+}
+
+.register__form-container div {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+    position: relative; 
+}
+
+.register__form-container div input {
+    padding: 0.2em 0.3em 0.2em 2.2em;
+    background-color:  rgba(245, 246, 234, 0.788);
+    border: 2px solid  rgb(118, 90, 68);
+    border-radius: 3px;
+    color: rgb(12, 12, 12);       
+}
+
+.register__form-container div i {
+    position: absolute;
+    top: 60%; left: 1%;
+    color: rgb(118, 90, 68);
+    font-size: 20px;
+}
+
+.register__form-container div .fa-eye:hover {
+    cursor: pointer;
+}
+
+.register__form-container div input:focus-within {
+    outline: 3px solid  rgb(118, 90, 68);
+}
+
+.register__form-container div label {
+    font-size: 18px;
+    margin-bottom: 0.2em;
+}
+
+.register__form-container button {
+    text-transform: uppercase;
+    border: 2px solid  rgb(118, 90, 68);
+    padding: 0.5em 1em;
+    border-radius: 5px;
+}
+
+.register__form-container button:hover {
+    border: 2px solid  rgb(87, 66, 51);
+}
