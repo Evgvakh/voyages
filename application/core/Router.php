@@ -2,8 +2,10 @@
 class Router
 {
     static function start()
-    {
-        var_dump($_SERVER['REQUEST_URI']);
+    {   
+        // session_start();
+            
+        // var_dump($_SERVER['REQUEST_URI']);
         //Par defaut
         $controller = 'Main';
         $action = 'index';
@@ -13,6 +15,7 @@ class Router
         // Nom du controlleur
         if (!empty($routes[2])) {
             $controller = ucfirst($routes[2]);
+            $_SESSION['page'] = $controller;
         }
 
         // Nom de l'action
@@ -42,20 +45,31 @@ class Router
         // Saisie de ficher de controlleur
         $controller_file = $controller_name . '.php';
         $controller_path = "application/controllers/" . $controller_file;
-        echo '</br> CONTROLLER PATH: ' . $controller_path . '</br> CONTROLLER FILE: ' . $controller_file . '</br> CONTROLLER NAME: ' . $controller_name;
-        echo '</br> ACTION NAME: ' . $action_name;
-        echo '</br> ID: ' . $id;
+        // echo '</br> CONTROLLER PATH: ' . $controller_path . '</br> CONTROLLER FILE: ' . $controller_file . '</br> CONTROLLER NAME: ' . $controller_name;
+        // echo '</br> ACTION NAME: ' . $action_name;
+        // echo '</br> ID: ' . $id;
         if (file_exists($controller_path)) {
-            include "application/controllers/" . $controller_file;
+            include "application/controllers/" . $controller_file;            
         } else {
             // Router::ErrorPage404();
         }
 
+        if(isset($_FILES['size']) && $_FILES['size'] > 0) {}
+
         // Creation du controlleur
         $controller = new $controller_name($controller, $action, $model_name, $id);
 
-        if (method_exists($controller, $action_name)) {
-            $controller->$action_name();
+        if (method_exists($controller, $action_name)) {            
+            if(isset($_POST)) {
+                if(isset($_FILES['image']['size']) && $_FILES['image']['size'] > 0) {
+                    $controller->$action_name($_POST, $_FILES['image']);
+                } else {
+                    $controller->$action_name($_POST); 
+                }                               
+            } else {
+                $controller->$action_name();
+            }
+                        
         } else {
             // Router::ErrorPage404();
         }
