@@ -3,7 +3,7 @@
 }
 
 .article-container .article-header {
-    border-bottom: 5px solid rgb(118, 90, 68);
+    border-bottom: 3px solid rgb(118, 90, 68);
     padding-bottom: 1em;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .article-container .article-img {
-    width: 55%; height: 30vh;
+    width: 65%; height: 35vh;
     margin: 2em auto;
     background-position: center center;
     background-repeat: no-repeat;
@@ -86,6 +86,12 @@
     font-size: 14px;
 }
 
+.comments-link {
+    font-size: 12px;
+    margin-top: 2em;
+    text-align: right;
+}
+
 .comments-container__form-container textarea {
     padding: 0.4em;
     width: 100%;
@@ -93,7 +99,7 @@
     border: 2px solid  rgb(118, 90, 68);
     border-radius: 3px;
     color: rgb(12, 12, 12);
-    margin: 1em auto;
+    margin: 1em auto; 
 }
 
 .comments-container__form-container textarea:focus-within {

@@ -10,7 +10,7 @@ class ArticlesModel
             die("Erreur : " . $e->getMessage());
         }
 
-        $sql = "SELECT * FROM articles";
+        $sql = "SELECT * FROM articles ORDER BY date DESC";
         $req = $pdo->prepare($sql);
         $req->execute();
 
@@ -31,21 +31,7 @@ class ArticlesModel
 
         $res = $req->fetchAll();        
         return $res;
-    }
-
-    public function getComments($id) {
-        try {
-            $pdo = new PDO("mysql:host=localhost; dbname=blog_voyages", 'root', '');
-        } catch (PDOException $e) {
-            die("Erreur : " . $e->getMessage());
-        }        
-        $sql = "SELECT * FROM commentaires WHERE id_article = :id ORDER BY created DESC";
-        $req = $pdo->prepare($sql);
-        $req->execute(array('id' => $id));
-
-        $res = $req->fetchAll();        
-        return $res;
-    }
+    }   
 
     public function getSorted($id)
     {
@@ -54,12 +40,25 @@ class ArticlesModel
         } catch (PDOException $e) {
             die("Erreur : " . $e->getMessage());
         }        
-        $sql = "SELECT * FROM articles WHERE id_category = :id";
+        $sql = "SELECT * FROM articles WHERE id_category = :id ORDER BY date DESC";
         $req = $pdo->prepare($sql);
         $req->execute(array('id' => $id));
 
         $res = $req->fetchAll();        
         return $res;
+    }
+
+    public function addArticle($title, $content, $img, $id_cat, $user_id)
+    {
+        try {
+            $pdo = new PDO("mysql:host=localhost; dbname=blog_voyages", 'root', '');
+        } catch (PDOException $e) {
+            die("Erreur : " . $e->getMessage());
+        }
+
+        $sql = "INSERT INTO articles (titre, contenu, img, id_category, id_user) VALUES (:title, :content, :img, :id_cat, :id_user)";
+        $req = $pdo->prepare($sql);
+        $req->execute(array('title' => $title, 'content' => $content, 'img' => $img, 'id_cat' => $id_cat, 'id_user' => $user_id));        
     }
 
     public function editArticle($id, $title, $content, $image, $id_cat) {
@@ -92,6 +91,20 @@ class ArticlesModel
         $req->execute(); 
     }
 
+    public function getComments($id) {
+        try {
+            $pdo = new PDO("mysql:host=localhost; dbname=blog_voyages", 'root', '');
+        } catch (PDOException $e) {
+            die("Erreur : " . $e->getMessage());
+        }        
+        $sql = "SELECT * FROM commentaires WHERE id_article = :id ORDER BY created DESC";
+        $req = $pdo->prepare($sql);
+        $req->execute(array('id' => $id));
+
+        $res = $req->fetchAll();        
+        return $res;
+    }
+
     public function addComment($id_user, $id_article, $content) {
         try {
             $pdo = new PDO("mysql:host=localhost; dbname=blog_voyages", 'root', '');
@@ -106,5 +119,28 @@ class ArticlesModel
         $req->execute(); 
     }
 
-
+    public function editComment($id, $content) {
+        try {
+            $pdo = new PDO("mysql:host=localhost; dbname=blog_voyages", 'root', '');
+        } catch (PDOException $e) {
+            die("Error : " . $e->getMessage());
+        }        
+        $sql = "UPDATE commentaires SET contenu = :content WHERE id = :id";
+        $req = $pdo->prepare($sql);
+        
+        $req->execute(array('content' => $content, 'id' => $id)); 
+    }
+    
+    public function deleteComment($id) {
+        try {
+            $pdo = new PDO("mysql:host=localhost; dbname=blog_voyages", 'root', '');
+        } catch (PDOException $e) {
+            die("Error : " . $e->getMessage());
+        }        
+        $sql = "DELETE FROM commentaires WHERE id = :id";
+        $req = $pdo->prepare($sql);
+        $req->bindValue(':id', $id);        
+        
+        $req->execute(); 
+    }
 }

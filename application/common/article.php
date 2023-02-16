@@ -42,4 +42,17 @@ class Article {
         $res = $req->fetch();        
         return $res[0];
     }
+
+    static function getImage($id) {
+        try {
+            $pdo = new PDO("mysql:host=localhost; dbname=blog_voyages", 'root', '');
+        } catch (PDOException $e) {
+            die("Erreur : " . $e->getMessage());
+        }        
+        $sql = "SELECT img FROM articles WHERE articles.id = :id";
+        $req = $pdo->prepare($sql);
+        $req->execute(array('id' => $id));
+        $res = $req->fetch();        
+        return $res[0];
+    }
 }

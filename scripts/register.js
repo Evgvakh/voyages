@@ -34,11 +34,11 @@ registerBtn.addEventListener('click', async (e) => {
     
     if (logins.includes(loginField.value)) {
         e.preventDefault();
-        alert('sadasdasd');
+        alert('USERNAME EXISTS');
     }
     if (emails.includes(emailField.value)) {
         e.preventDefault();
-        alert('sssss');
+        alert('EMAIL EXIST');
     }
     if (passField.value !== passConfirmField.value) {
         e.preventDefault();

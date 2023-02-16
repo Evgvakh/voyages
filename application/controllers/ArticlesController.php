@@ -2,6 +2,8 @@
 
 require_once 'application/core/Controller.php';
 require_once 'application/core/View.php';
+require_once 'application/common/user.php';
+require_once 'application/common/article.php';
 class ArticlesController extends Controller
 {
     public function indexAction()
@@ -25,15 +27,33 @@ class ArticlesController extends Controller
         $this->view->generate('ARTICLE', $content, $data);
     }
 
-    public function editAction($data, $file) {
+    public function addAction($data, $file) {
+        $title = $data['title'];
+        $category = (int) $data['category'];
+        $content = $data['content'];
+        $user = $data['username'];
+        $uploadDir = $_SERVER['DOCUMENT_ROOT'] . '/voyages/img/';
+        $img = 'img/'.$file['name'];
+        move_uploaded_file($file['tmp_name'], $uploadDir.$file['name']);
+        $user_id = (int) User::getUserIdByName($user);
+        $this->model->addArticle($title, $content, $img, $category, $user_id);
+
+        header('Location: http://localhost/voyages/articles');
+    }
+
+    public function editAction($data, $file = null) {
         $title = $data['title'];
         $category = (int) $data['category'];
         $content = $data['content'];
         $uploadDir = $_SERVER['DOCUMENT_ROOT'] . '/voyages/img/';
-        $img = 'img/'.$file['name'];
+
+        if(strlen($file['name']) > 0){
+            $img = 'img/'.$file['name'];            
+        } else {
+            $img = Article::getImage($this->id_article);            
+        }
 
         move_uploaded_file($file['tmp_name'], $uploadDir.$file['name']);
-        
         $this->model->editArticle($this->id_article, $title, $content, $img, $category);
 
         header('Location: http://localhost/voyages/articles/showOne/'.$this->id_article);
@@ -51,4 +71,16 @@ class ArticlesController extends Controller
         header('Location: http://localhost/voyages/articles/showOne/'.$this->id_article);
     }
 
+    public function editCommentAction($data) {        
+        $content = $data['content'];
+        $article_id = $data['article_id'];        
+        $this->model->editComment($this->id_article, $content);
+        header('Location: http://localhost/voyages/articles/showOne/'.$article_id);
+    }
+
+    public function deleteCommentAction($data) {
+        $article_id = $data['article_id'];        
+        $this->model->deleteComment($this->id_article);
+        header('Location: http://localhost/voyages/articles/showOne/'.$article_id);
+    }
 }
