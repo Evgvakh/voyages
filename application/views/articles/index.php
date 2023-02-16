@@ -5,11 +5,16 @@ $articles = [];
 
 foreach ($data as $key => $value) {
     extract($value);          
-    $articles[$key] = new Article($id, $titre, $contenu, $img, $id_category, $id_user);    
+    $articles[$key] = new Article($id, $titre, $contenu, $img, $id_category, $id_user, $date);    
 }
 ?>
-
-
+<div class="add-article__arrow flex flex-col justify-between">
+    <p>Add your</br>article</br>here</p>
+    <i class="fa-solid fa-arrow-down-long"></i>
+</div>
+<div class="add-article"> 
+    <i class="fa-solid fa-blog"></i>
+</div>
 <div class="articles__main-container">    
     <?php foreach ($articles as $key => $value): ?>
         <div class="articles__item">

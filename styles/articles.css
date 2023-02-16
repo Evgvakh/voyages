@@ -2,6 +2,65 @@
     padding: 7em 5em 5em 5em;
 }
 
+.add-article {
+    position: fixed;
+    padding: 0.6em;
+    font-size: 38px;
+    line-height: 1em;
+    bottom: 25%; right: 6%;    
+    background-color: rgba(118, 90, 68, 0.581);
+    border-radius: 10px;
+    color: rgba(255,251,242);
+    clip-path: circle(45%);
+    box-shadow: inset 0px 0px 25px 5px rgba(138, 105, 80, 0.842);
+    transition: background-color 0.3s ease-out;        
+}
+
+.add-article:hover {
+    background-color: rgba(118, 90, 68);
+}
+
+.add-article i {
+    cursor: pointer;      
+}
+
+.add-article__arrow {
+    position: fixed;
+    right: 6.5%; bottom: 42%;
+    text-align: center;
+    font-family: 'Lilita One', cursive;
+}
+
+.add-article__arrow p {
+    font-size: 18px;
+}
+
+.add-article__arrow i {
+    font-size: 24px;
+    line-height: 1em;
+    font-weight: 700;
+    animation: moveArrowDown 0.8s ease-in-out infinite;    
+}
+
+@keyframes moveArrowDown {
+    0% {
+        transform: translateY(0%);        
+    }
+
+    35% {
+        color: rgba(12, 12, 12, 0.4);
+    }
+
+    50% {
+        color: rgba(138, 105, 80, 0.342);
+    }
+
+    100% {
+        transform: translateY(140%);
+        color: rgba(138, 105, 80, 0.842); 
+    }
+}
+
 .articles__item {    
     margin: 0 auto;
     width: 100%;
@@ -54,6 +113,11 @@
 .articles-about p:nth-of-type(2) {      
     font-size: 14px;
     margin-bottom: 0.7em;
+    text-transform: uppercase;
+}
+
+.articles-about .category a:hover {
+    text-decoration: underline;
 }
 
 #contentPar {
@@ -65,7 +129,7 @@
     text-align: end;
     color: rgba(118, 90, 68); 
     font-size: 14px;
-    line-height: 1em;    
+    line-height: 1em;       
 }
 
 
