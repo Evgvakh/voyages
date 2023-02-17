@@ -2,12 +2,10 @@
 
 require_once 'application/core/Controller.php';
 require_once 'application/core/View.php';
-class MainController extends Controller
-{
+class VoyagesController extends Controller {      
 
-    public function indexAction()
-    {
+    public function indexAction() {        
         $content = 'application/views/' . $this->route . '/' . $this->action . '.php';
-        $this->view->generate('MAIN PAGE', $content);
+        $this->view->generate('VOYAGES', $content);
     }
 }

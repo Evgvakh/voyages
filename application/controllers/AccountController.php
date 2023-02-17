@@ -13,4 +13,20 @@ class AccountController extends Controller {
         $content = 'application/views/' . $this->route . '/' . $this->action . '.php';
         $this->view->generate('REGISTER PAGE', $content);
     }
+
+    public function adduserAction($data) {        
+        $login = htmlspecialchars($data['login']);
+        $email = htmlspecialchars($data['email']);
+        $password = htmlspecialchars($data['password']);
+        $role = 'user';
+        $this->model->addUser($login, $email, $password, $role);
+        header('Location: http://localhost/voyages/account/login');
+    }
+
+    public function signinAction($data) {        
+        session_start();
+        $_SESSION['logged_user'] = $data['login'];
+        header('Location: http://localhost/voyages/articles');
+    }
+
 }
