@@ -4,6 +4,11 @@
     position: relative;
   }
 
+  .up {
+    top: 83.7%;
+    line-height: 1em;
+  }
+
   .header-container {
     padding: 2em 4em;
     justify-content: center;
@@ -18,7 +23,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    text-align: center;    
+    text-align: center;
   }
 
   .nav-block > ul {
@@ -46,7 +51,7 @@
   .cat-select:hover > .cat-select__list,
   .page-select:hover > .page-select__list {
     animation: growDown 0.6s ease-in;
-    height: auto;    
+    height: auto;
   }
 
   .articles__item {
@@ -74,12 +79,12 @@
   }
 
   .add-article {
-    right: 3%;
+    right: 3.1%;
     font-size: 34px;
   }
 
   .add-article__arrow {
-    right: 3.8%;
+    right: 3.3%;
     bottom: 39%;
   }
 

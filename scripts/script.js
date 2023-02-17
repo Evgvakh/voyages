@@ -1,11 +1,3 @@
-// async function fetchUsers() {
-//     await fetch("http://localhost/voyages/application/process/processUsers.php")
-//         .then (res => res.json())
-//         .then (res => {console.log(res); return res;});
-// }
-
-// fetchUsers();
-
 const passBlockToShow = document.querySelectorAll(".password-block");
 
 passBlockToShow.forEach((el) => {

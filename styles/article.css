@@ -1,121 +1,122 @@
 .article-container {
-    padding: 6em 8em 8em 8em;
+  padding: 6em 8em 8em 8em;
 }
 
 .article-container .article-header {
-    border-bottom: 3px solid rgb(118, 90, 68);
-    padding-bottom: 1em;
+  border-bottom: 3px solid rgb(118, 90, 68);
+  padding-bottom: 1em;
 }
 
 .article-container .article-header > div > p {
-    font-weight: 700;
-    font-size: 20px;
-    text-transform: uppercase;
-    margin-bottom: 0.3em;
+  font-weight: 700;
+  font-size: 20px;
+  text-transform: uppercase;
+  margin-bottom: 0.3em;
 }
 
 .article-container .article-header > div > .articles-link {
-    font-weight: 400;
-    font-size: 13px;
+  font-weight: 400;
+  font-size: 13px;
 }
 
 .article-container h2 {
-    text-transform: uppercase;
-    font-size: 28px;
-    font-weight: bold;
-    color:  rgb(118, 90, 68);
-    margin: 1em 0 0.3em 0; 
+  text-transform: uppercase;
+  font-size: 28px;
+  font-weight: bold;
+  color: rgb(118, 90, 68);
+  margin: 1em 0 0.3em 0;
 }
 
 .article-container .article-img {
-    width: 65%; height: 35vh;
-    margin: 2em auto;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;       
+  width: 65%;
+  height: 35vh;
+  margin: 2em auto;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .article-container .article-content {
-    border-top: 1px solid rgb(118, 90, 68);
-    text-align: justify;
-    font-size: 18px;
-    padding-top: 2em;
+  border-top: 1px solid rgb(118, 90, 68);
+  text-align: justify;
+  font-size: 18px;
+  padding-top: 2em;
 }
 
 .comments-container {
-    background-color: rgba(118, 90, 68, 0.726);
-    margin: 2em 1em;
-    border-radius: 10px;
-    color:rgba(118, 90, 68);
-    padding: 1em;
+  background-color: rgba(118, 90, 68, 0.726);
+  margin: 2em 1em;
+  border-radius: 10px;
+  color: rgba(118, 90, 68);
+  padding: 1em;
 }
 
 .comments-container h3 {
-    color:  rgba(245, 246, 234);
-    text-transform: uppercase;
-    font-weight: 700;
-    font-size: 20px;
-    margin: 0 0 1em 0;
+  color: rgba(245, 246, 234);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 20px;
+  margin: 0 0 1em 0;
 }
 
 .comments-item {
-    background-color: rgba(245, 246, 234);
-    padding: 0.5em;
-    margin-bottom: 1em;
-    border-radius: 10px;
-    border: 2px solid  rgb(118, 90, 68);
+  background-color: rgba(245, 246, 234);
+  padding: 0.5em;
+  margin-bottom: 1em;
+  border-radius: 10px;
+  border: 2px solid rgb(118, 90, 68);
 }
 
 .comments-item .comments-item__content {
-    padding: 0.5em;
-    font-size: 18px;
-    color: rgb(12, 12, 12);
+  padding: 0.5em;
+  font-size: 18px;
+  color: rgb(12, 12, 12);
 }
 
 .comments-container__leave-comment {
-    margin: 2em auto;
-    width: 90%;
+  margin: 2em auto;
+  width: 90%;
 }
 
 .comments-container__form-container h4 {
-    padding-left: 1em;
-    color:  rgba(245, 246, 234);
+  padding-left: 1em;
+  color: rgba(245, 246, 234);
 }
 
 .comments-item__head span {
-    font-size: 14px;
+  font-size: 14px;
 }
 
 .comments-link {
-    font-size: 12px;
-    margin-top: 2em;
-    text-align: right;
+  font-size: 12px;
+  margin-top: 2em;
+  text-align: right;
 }
 
 .comments-container__form-container textarea {
-    padding: 0.4em;
-    width: 100%;
-    background-color:  rgba(245, 246, 234, 0.788);
-    border: 2px solid  rgb(118, 90, 68);
-    border-radius: 3px;
-    color: rgb(12, 12, 12);
-    margin: 1em auto; 
+  padding: 0.4em;
+  width: 100%;
+  background-color: rgba(245, 246, 234, 0.788);
+  border: 2px solid rgb(118, 90, 68);
+  border-radius: 3px;
+  color: rgb(12, 12, 12);
+  margin: 1em auto;
 }
 
 .comments-container__form-container textarea:focus-within {
-    outline: 2px solid  rgb(118, 90, 68);
+  outline: 2px solid rgb(118, 90, 68);
 }
 
 .comments-container__form-container button {
-    text-transform: uppercase;
-    width: 30%;
-    border: 2px solid  rgba(245, 246, 234, 0.788);
-    padding: 0.5em 1em;
-    border-radius: 5px;
-    color: rgba(245, 246, 234, 0.788);
-    align-self: flex-end;
+  text-transform: uppercase;
+  width: 30%;
+  border: 2px solid rgba(245, 246, 234, 0.788);
+  padding: 0.5em 1em;
+  border-radius: 5px;
+  color: rgba(245, 246, 234, 0.788);
+  align-self: flex-end;
 }
 
 .comments-container__form-container button:hover {
-    border: 2px solid  rgb(87, 66, 51);    
+  border: 2px solid rgb(87, 66, 51);
 }

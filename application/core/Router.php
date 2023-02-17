@@ -3,9 +3,6 @@ class Router
 {
     static function start()
     {   
-        // session_start();
-            
-        // var_dump($_SERVER['REQUEST_URI']);
         //Par defaut
         $controller = 'Main';
         $action = 'index';
@@ -45,13 +42,11 @@ class Router
         // Saisie de ficher de controlleur
         $controller_file = $controller_name . '.php';
         $controller_path = "application/controllers/" . $controller_file;
-        // echo '</br> CONTROLLER PATH: ' . $controller_path . '</br> CONTROLLER FILE: ' . $controller_file . '</br> CONTROLLER NAME: ' . $controller_name;
-        // echo '</br> ACTION NAME: ' . $action_name;
-        // echo '</br> ID: ' . $id;
+        
         if (file_exists($controller_path)) {
             include "application/controllers/" . $controller_file;            
         } else {
-            // Router::ErrorPage404();
+            Router::ErrorPage404();
         }
 
         if(isset($_FILES['size']) && $_FILES['size'] > 0) {}
@@ -68,10 +63,9 @@ class Router
                 }                               
             } else {
                 $controller->$action_name();
-            }
-                        
+            }                        
         } else {
-            // Router::ErrorPage404();
+            Router::ErrorPage404();
         }
 
     }

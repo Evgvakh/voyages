@@ -1,135 +1,135 @@
 .articles__main-container {
-    padding: 7em 5em 5em 5em;
+  padding: 7em 5em 5em 5em;
 }
 
 .add-article {
-    position: fixed;
-    padding: 0.6em;
-    font-size: 38px;
-    line-height: 1em;
-    bottom: 25%; right: 6%;    
-    background-color: rgba(118, 90, 68, 0.581);
-    border-radius: 10px;
-    color: rgba(255,251,242);
-    clip-path: circle(45%);
-    box-shadow: inset 0px 0px 25px 5px rgba(138, 105, 80, 0.842);
-    transition: background-color 0.3s ease-out;        
+  position: fixed;
+  padding: 0.6em;
+  font-size: 38px;
+  line-height: 1em;
+  bottom: 25%;
+  right: 6%;
+  background-color: rgba(118, 90, 68, 0.581);
+  border-radius: 10px;
+  color: rgba(255, 251, 242);
+  clip-path: circle(45%);
+  box-shadow: inset 0px 0px 25px 5px rgba(138, 105, 80, 0.842);
+  transition: background-color 0.3s ease-out;
 }
 
 .add-article:hover {
-    background-color: rgba(118, 90, 68);
+  background-color: rgba(118, 90, 68);
 }
 
 .add-article i {
-    cursor: pointer;      
+  cursor: pointer;
 }
 
 .add-article__arrow {
-    position: fixed;
-    right: 6.5%; bottom: 42%;
-    text-align: center;
-    font-family: 'Lilita One', cursive;
+  position: fixed;
+  right: 5.8%;
+  bottom: 40%;
+  text-align: center;
+  font-family: "Lilita One", cursive;
 }
 
 .add-article__arrow p {
-    font-size: 18px;
+  font-size: 18px;
 }
 
 .add-article__arrow i {
-    font-size: 24px;
-    line-height: 1em;
-    font-weight: 700;
-    animation: moveArrowDown 0.8s ease-in-out infinite;    
+  font-size: 24px;
+  line-height: 1em;
+  font-weight: 700;
+  animation: moveArrowDown 0.8s ease-in-out infinite;
 }
 
 @keyframes moveArrowDown {
-    0% {
-        transform: translateY(0%);        
-    }
+  0% {
+    transform: translateY(0%);
+  }
 
-    35% {
-        color: rgba(12, 12, 12, 0.4);
-    }
+  35% {
+    color: rgba(12, 12, 12, 0.4);
+  }
 
-    50% {
-        color: rgba(138, 105, 80, 0.342);
-    }
+  50% {
+    color: rgba(138, 105, 80, 0.342);
+  }
 
-    100% {
-        transform: translateY(140%);
-        color: rgba(138, 105, 80, 0.842); 
-    }
+  100% {
+    transform: translateY(140%);
+    color: rgba(138, 105, 80, 0.842);
+  }
 }
 
-.articles__item {    
-    margin: 0 auto;
-    width: 100%;
-    height: 28vh;    
-    display: flex;
-    justify-content: space-between;    
-    margin-bottom: 3em; 
-    border-radius: 27px;   
+.articles__item {
+  margin: 0 auto;
+  width: 100%;
+  height: 28vh;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 3em;
+  border-radius: 27px;
 }
 
 .articles-item__img-block {
-    width: 28%;
-    margin-right: 1em;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    border-radius: 4px;
-    box-shadow: inset -8px -8px 25px 13px rgba(255,251,242,0.75);
-}   
-
-.articles-right {
-    width: 70%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+  width: 28%;
+  margin-right: 1em;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  border-radius: 4px;
+  box-shadow: inset -8px -8px 25px 13px rgba(255, 251, 242, 0.75);
 }
 
-.articles-item__text-content {    
-    text-align: justify;
-    height: 90%;
-    overflow-y: hidden;    
+.articles-right {
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.articles-item__text-content {
+  text-align: justify;
+  height: 90%;
+  overflow-y: hidden;
 }
 
 .articles-item__text-content h2 {
-    text-transform: uppercase;
-    font-weight: bold;
-    font-size: 22px;
-    line-height: 1.3em;
-    margin-bottom: 0.5em;
-    color:  rgb(118, 90, 68); 
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 1.3em;
+  margin-bottom: 0.5em;
+  color: rgb(118, 90, 68);
 }
 
 .articles-about p:nth-of-type(1) {
-    color: rgba(118, 90, 68);
-    font-style: italic;
-    font-size: 14px;
-    margin-bottom: 0.7em;
+  color: rgba(118, 90, 68);
+  font-style: italic;
+  font-size: 14px;
+  margin-bottom: 0.7em;
 }
 
-.articles-about p:nth-of-type(2) {      
-    font-size: 14px;
-    margin-bottom: 0.7em;
-    text-transform: uppercase;
+.articles-about p:nth-of-type(2) {
+  font-size: 14px;
+  margin-bottom: 0.7em;
+  text-transform: uppercase;
 }
 
 .articles-about .category a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 #contentPar {
-    height: 60%;
-    overflow: hidden;
+  height: 60%;
+  overflow: hidden;
 }
 
 .articles-link {
-    text-align: end;
-    color: rgba(118, 90, 68); 
-    font-size: 14px;
-    line-height: 1em;       
+  text-align: end;
+  color: rgba(118, 90, 68);
+  font-size: 14px;
+  line-height: 1em;
 }
-
-

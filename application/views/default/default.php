@@ -1,4 +1,11 @@
-<?php session_start(); ?>
+<?php 
+
+session_start();
+if (isset($_POST['logout']) && $_POST['logout'] == 'logout') {
+    $_SESSION['logged_user'] = '';
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,6 +30,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=RocknRoll+One&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="http://localhost/voyages/img/wooden_fashion_electronic_guitar_4453936.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     <script src="https://kit.fontawesome.com/cf646263c8.js" crossorigin="anonymous"></script>
@@ -109,13 +117,7 @@
             </div>
             <div class="nav-block__wrapper flex space-x-8">
                 <nav class="nav-block">                                       
-                    <ul class="">
-                        <li class="page-select">My Stack
-                            <ul class="page-select__list">
-                                <li><a href="http://localhost/voyages/voyages">Main page</a></li>
-                                <li><a href="">My Strat</a></li>
-                            </ul>
-                        </li>
+                    <ul class="">                       
                         <li><a href="http://localhost/voyages/articles">Blog</a></li>
                         <li class="cat-select">
                             Categories
@@ -131,14 +133,16 @@
                     </ul>
                 </nav>
                 
-                <?php if (isset($_SESSION['logged_user'])): ?>
-                    <div class="user-data">
-                        <p>
-                            <i class="fa-solid fa-user"></i>Hi,
-                            <?= ucfirst($_SESSION['logged_user']) ?>
-                        </p>
-                        <i class="fa-solid fa-arrow-right-to-bracket">LogOut</i>
-                    </div>
+                <?php if (isset($_SESSION['logged_user']) && strlen($_SESSION['logged_user']) > 0): ?>
+                    <form action="http://localhost/voyages/articles" method="post">
+                        <div class="user-data">
+                            <p>
+                                <i class="fa-solid fa-user"></i>Hi,
+                                <?= ucfirst($_SESSION['logged_user']) ?>
+                            </p>
+                            <button type="submit" name="logout" value="logout"><i class="fa-solid fa-arrow-right-to-bracket">LogOut</i></button>
+                        </div>
+                    </form>
                 <?php endif ?>
             </div>
         </div>

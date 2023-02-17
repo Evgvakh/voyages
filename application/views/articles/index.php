@@ -9,7 +9,7 @@ foreach ($data as $key => $value) {
 }
 ?>
 <div class="add-article__arrow flex flex-col justify-between">
-    <p>Add your</br>article</br>here</p>
+    <p>Create your</br>article</br>here</p>
     <i class="fa-solid fa-arrow-down-long"></i>
 </div>
 <div class="add-article"> 
@@ -25,7 +25,7 @@ foreach ($data as $key => $value) {
                     <h2>
                         <?= $value->title ?>
                     </h2>
-                    <div class="articles-about flex justify-between">
+                    <div class="articles-about sm:flex sm:justify-between">
                         <p class="user ">
                             Written by <u><?= ucfirst($value->getUserName($value->id))?></u>                            
                         </p>                        
@@ -37,7 +37,7 @@ foreach ($data as $key => $value) {
                         <?= $value->content ?>
                     </p>
                 </div>
-                <div class="articles-link space-x-14">
+                <div class="articles-link sm:space-x-14 ">
                     <?php if ((isset($_SESSION['logged_user'])) &&
                     ($_SESSION['logged_user'] === 'admin' || 
                      $_SESSION['logged_user'] === 'moderateur' ||
@@ -49,7 +49,7 @@ foreach ($data as $key => $value) {
                      $_SESSION['logged_user'] === $value->getUserName($value->id))):?>
                         <a data-id="<?=$value->id?>" id="delete_article" href="#">Delete article <i class="fa-solid fa-trash"></i></a>
                     <?php endif;?>
-                        <a href="http://localhost/voyages/articles/showOne/<?=$value->id?>" class="font-bold">Read article <i class="fa-solid fa-arrow-right"></i></a>
+                        <a href="http://localhost/voyages/articles/showOne/<?=$value->id?>" class="font-bold mt-4 sm:mt-0">Read article <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>

@@ -20,7 +20,9 @@ class AccountController extends Controller {
         $password = htmlspecialchars($data['password']);
         $role = 'user';
         $this->model->addUser($login, $email, $password, $role);
-        header('Location: http://localhost/voyages/account/login');
+        session_start();
+        $_SESSION['logged_user'] = ucfirst($login);
+        header('Location: http://localhost/voyages/articles');
     }
 
     public function signinAction($data) {        

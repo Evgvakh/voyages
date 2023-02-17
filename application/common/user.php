@@ -1,17 +1,7 @@
 <?php
 
 class User {
-    public $id;
-    public $username;
-
-    public function __construct($id) {
-        $this->id = $id; 
-    }
-
-    static function getUserNameById($id) {
-        
-    }
-
+    
     static function getUserIdByName($name) {
         try {
             $pdo = new PDO("mysql:host=localhost; dbname=blog_voyages", 'root', '');
