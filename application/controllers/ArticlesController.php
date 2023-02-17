@@ -37,7 +37,6 @@ class ArticlesController extends Controller
         move_uploaded_file($file['tmp_name'], $uploadDir.$file['name']);
         $user_id = (int) User::getUserIdByName($user);
         $this->model->addArticle($title, $content, $img, $category, $user_id);
-
         header('Location: http://localhost/voyages/articles');
     }
 
@@ -55,7 +54,6 @@ class ArticlesController extends Controller
 
         move_uploaded_file($file['tmp_name'], $uploadDir.$file['name']);
         $this->model->editArticle($this->id_article, $title, $content, $img, $category);
-
         header('Location: http://localhost/voyages/articles/showOne/'.$this->id_article);
     }
 

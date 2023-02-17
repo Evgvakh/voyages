@@ -1,169 +1,192 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background-color: rgba(245, 246, 234, 0.788);    
+  background-color: rgba(245, 246, 234, 0.788);
 }
 
 .main-container {
-    width: 75%;
-    margin: 0 auto;
+  width: 75%;
+  margin: 0 auto;
 }
 
 .up {
-    position: fixed;
-    top: 81.2%; right: 0%;    
+  position: fixed;
+  top: 82.9%;
+  right: 0%;
 }
 
 .up a {
-    display: block;
-    width: 100%;
-    height: 100%;
-    font-size: 40px;
-    color:rgba(118, 90, 68, 0.651);
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-size: 40px;
+  color: rgba(118, 90, 68, 0.651);
 }
 
 .header-container {
-    display: flex;
-    color: rgb(12, 12, 12);
-    justify-content: space-between;
-    align-items: flex-start;
-    font-size: 20px;
-    padding: 2em 0;    
+  display: flex;
+  color: rgb(12, 12, 12);
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 20px;
+  padding: 2em 0;
 }
 
 .header-container .logo-block {
-    font-family: 'RocknRoll One', sans-serif;
-    align-self: center;
-    font-size: 24px;
+  font-family: "RocknRoll One", sans-serif;
+  align-self: center;
+  font-size: 24px;
 }
 
 header ul {
-    display: flex;
-    list-style: none;    
+  display: flex;
+  list-style: none;
 }
 
 header a {
-    text-decoration: none;
-    color: rgb(12, 12, 12);
+  text-decoration: none;
+  color: rgb(12, 12, 12);
 }
 
-.nav-block {    
-    align-self: center;
+.nav-block {
+  align-self: center;
 }
 
 .nav-block > ul > li {
-    margin-right: 1em; 
-    transition: all 0.1s ease-in;
+  margin-right: 1em;
+  transition: all 0.1s ease-in;
 }
 
-.nav-block > ul > li:hover, .nav-block > ul > li:hover > a {    
-    color: rgba(118, 90, 68, 0.87);     
+.nav-block > ul > li:hover,
+.nav-block > ul > li:hover > a {
+  color: rgba(118, 90, 68, 0.87);
 }
 
-.cat-select, .page-select {
-    position: relative;    
+.cat-select,
+.page-select {
+  position: relative;
 }
 
-.cat-select:hover, .page-select:hover {
-    cursor: context-menu;
+.cat-select:hover,
+.page-select:hover {
+  cursor: context-menu;
 }
 
-.cat-select__list, .page-select__list {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    z-index: 5;
-    top: 102%;
-    height: 0%;
-    overflow-y: hidden;
-    font-size: 16px;
-    width: max-content;    
+.cat-select__list,
+.page-select__list {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 5;
+  top: 102%;
+  height: 0%;
+  overflow-y: hidden;
+  font-size: 16px;
+  width: max-content;
 }
 
-.cat-select__list li a, .page-select__list li a {
-    padding-bottom: 2px;
-    transition: all 0.2s ease-out;
-    color:rgb(12, 12, 12);
+.cat-select__list li a,
+.page-select__list li a {
+  padding-bottom: 2px;
+  transition: all 0.2s ease-out;
+  color: rgb(12, 12, 12);
 }
 
-.cat-select__list li:hover, .page-select__list li:hover,
-.cat-select__list li:hover > a, .page-select__list li:hover > a {
-    color: rgba(118, 90, 68);    
+.cat-select__list li:hover,
+.page-select__list li:hover,
+.cat-select__list li:hover > a,
+.page-select__list li:hover > a {
+  color: rgba(118, 90, 68);
 }
 
-.cat-select__list li:hover > a, .page-select__list li:hover > a {
-    font-weight: 700;
+.cat-select__list li:hover > a,
+.page-select__list li:hover > a {
+  font-weight: 700;
 }
 
-.cat-select:hover > .cat-select__list, .page-select:hover > .page-select__list {
-    animation: growDown 0.3s ease-in;
-    height: auto;   
+.cat-select:hover > .cat-select__list,
+.page-select:hover > .page-select__list {
+  animation: growDown 0.3s ease-in;
+  height: auto;
 }
 
 @keyframes growDown {
-    0% {height: 0}
-    15% {height: 60%}
-    30% {height: 120%}
-    45% {height: 180%}
-    60% {height: 240%}
-    75% {height: 300%}
-    90% {height: 360%}           
-    100% {height: auto}
+  0% {
+    height: 0;
+  }
+  15% {
+    height: 60%;
+  }
+  30% {
+    height: 120%;
+  }
+  45% {
+    height: 180%;
+  }
+  60% {
+    height: 240%;
+  }
+  75% {
+    height: 300%;
+  }
+  90% {
+    height: 360%;
+  }
+  100% {
+    height: auto;
+  }
 }
 
 .user-data {
-    font-size: 12px;
-    color: rgba(118, 90, 68);      
+  font-size: 12px;
+  color: rgba(118, 90, 68);
 }
 
 .user-data i {
-    margin-right: 0.5em;
+  margin-right: 0.5em;
 }
 
 .fa-arrow-right-to-bracket {
-    cursor: pointer;    
+  cursor: pointer;
 }
 
-
 footer {
-    padding: 1em;
-    height: 12vh;
-    position: fixed;
-    bottom: 0;
-    width: 100vw;
-    background-color:rgba(118, 90, 68, 0.651);
-    box-shadow: 0px 0px 5px 2px rgba(138, 105, 80, 0.842);
-    text-align: center;
-    transition: background-color 0.3s ease-out;    
+  padding: 1em;
+  height: 12vh;
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  background-color: rgba(118, 90, 68, 0.651);
+  box-shadow: 0px 0px 5px 2px rgba(138, 105, 80, 0.842);
+  text-align: center;
+  transition: background-color 0.3s ease-out;
 }
 
 footer:hover {
-    background-color: rgba(118, 90, 68);
-    box-shadow: 0px 0px 2px 1px rgba(138, 105, 80);
+  background-color: rgba(118, 90, 68);
+  box-shadow: 0px 0px 2px 1px rgba(138, 105, 80);
 }
 
 footer .logo-block {
-    font-family: 'RocknRoll One', sans-serif;
-    align-self: center;
-    font-size: 28px;
-    font-weight: bold;
-    color:  rgba(245, 246, 234);
+  font-family: "RocknRoll One", sans-serif;
+  align-self: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: rgba(245, 246, 234);
 }
 
-
 ::-webkit-scrollbar {
-    width: 7px;
-    background-color:  rgba(245, 246, 234, 0.788);
+  width: 7px;
+  background-color: rgba(245, 246, 234, 0.788);
 }
 
 ::-webkit-scrollbar-thumb {
-    width: 1px;
-    height: 10%;
-    border-radius: 3px;
-    background-color: rgba(118, 90, 68, 0.797); 
+  width: 1px;
+  height: 10%;
+  border-radius: 3px;
+  background-color: rgba(118, 90, 68, 0.797);
 }
-

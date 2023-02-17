@@ -21,7 +21,7 @@ foreach ($comment_data as $key => $value) {
             <p>CATEGORY | <a href="http://localhost/voyages/articles/sort/<?= $id_category ?>"><?=
                 Article::getCategoryName($art_id) ?></a>
             </p>
-            <div class="articles-link space-x-6">
+            <div class="articles-link sm:space-x-6">
                 <?php if (
                     (isset($_SESSION['logged_user'])) &&
                     ($_SESSION['logged_user'] === 'admin' ||
@@ -46,7 +46,7 @@ foreach ($comment_data as $key => $value) {
     <h2>
         <?= $titre ?>
     </h2>
-    <p>Written by <u>
+    <p class="article-author">Written by <u>
             <?= ucfirst(Article::getUserName($art_id)) ?>
         </u></p>
     <div class="article-img" style="background-image: url(http://localhost/voyages/<?= $img ?>);"></div>

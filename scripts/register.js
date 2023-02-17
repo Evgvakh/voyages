@@ -34,15 +34,24 @@ registerBtn.addEventListener('click', async (e) => {
     
     if (logins.includes(loginField.value)) {
         e.preventDefault();
-        alert('USERNAME EXISTS');
+        loginField.value = '';
+        loginField.placeholder = 'This user name already exists.';        
     }
     if (emails.includes(emailField.value)) {
         e.preventDefault();
-        alert('EMAIL EXIST');
+        emailField.value = '';
+        emailField.placeholder = 'This email has been already used.';
     }
     if (passField.value !== passConfirmField.value) {
         e.preventDefault();
-        alert('pass no match');
-    }    
+        passField.value = ''; passConfirmField.value = '';
+        passField.placeholder = 'Passwords do NOT match.';
+        passConfirmField.placeholder = 'Passwords do NOT match.';
+    }
+    
+    if (loginField.value.length < 1 || emailField.value < 1 || passField.value < 1 || passConfirmField.value < 1) {
+        e.preventDefault();
+        document.querySelector('.register-container h2').innerHTML = 'Create New User <span>Please fill all the fields</span>';        
+    }   
 });
     
